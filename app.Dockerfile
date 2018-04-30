@@ -7,5 +7,5 @@ VOLUME /home
 WORKDIR /home
 COPY tserver.js .
 #COPY . .
-EXPOSE 8080
+EXPOSE 9090
 CMD ["node","tserver.js"]
