@@ -1,4 +1,4 @@
-ROM alpine
+FROM alpine
 RUN apk add --update
 RUN apk add nodejs
 RUN apk add mc
