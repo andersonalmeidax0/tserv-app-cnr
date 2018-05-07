@@ -1,6 +1,6 @@
 #required PORTS: 9999
 #required NETS: none
-#required VOLUMES: /fav
+#required VOLUMES: /var
 #required ENV Vars
 FROM alpine
 RUN apk add --update
