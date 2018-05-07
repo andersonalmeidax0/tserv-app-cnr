@@ -8,6 +8,7 @@ var datetime =
                 + currentdate.getHours() + "-" + currentdate.getMinutes() + "-"  + currentdate.getSeconds();
 
   res.end('{"Hello Node.JS!","'+datetime+'"}');
+  console.log(datetime);
 }).listen(9999);
 
 console.log('Server running at http://localhost:9999/');
