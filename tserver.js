@@ -1,5 +1,5 @@
 var http = require('http');
-
+ var os = require("os"); var hostname = os.hostname(); 
 http.createServer(function (req, res) 
 {
   if(request.method === "GET" && request.url==="/health")
@@ -16,7 +16,9 @@ http.createServer(function (req, res)
                  currentdate.getFullYear() + "-"  + (currentdate.getMonth()+1)  + "-"  +  currentdate.getDate() + "-"
                 + currentdate.getHours() + "-" + currentdate.getMinutes() + "-"  + currentdate.getSeconds();
 
-     res.end('{"Hello Node.JS!","'+datetime+'"}');
+     res.write('{"Hello","'+datetime+'"}');
+     res.write('{"Host ","'+hostname+'"}');
+     res.end('');
      console.log(datetime);
   }
  else
