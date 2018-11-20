@@ -8,6 +8,11 @@ http.createServer(function (req, res)
     res.end('APPSERV OK');
   }
   else
+  if(req.method === "GET" && req.url==="/error")
+  {
+    res.isto_eh_erro();
+  }
+  else
   if(req.method === "GET" && req.url==="/time")
   {
     res.writeHead(200, {'Content-Type': 'text/plain'});
