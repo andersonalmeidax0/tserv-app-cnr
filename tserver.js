@@ -1,14 +1,14 @@
 var http = require('http');
- var os = require("os"); var hostname = os.hostname(); 
+ var os = require("os"); var hostname1 = os.hostname(); 
 http.createServer(function (req, res) 
 {
-  if(request.method === "GET" && request.url==="/health")
+  if(req.method === "GET" && req.url==="/health")
   {
-    response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.end('{"Status":"OK"}');
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('APPSERV OK');
   }
   else
-  if(request.method === "GET" && request.url==="/time")
+  if(req.method === "GET" && req.url==="/time")
   {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     var currentdate = new Date(); 
@@ -17,14 +17,14 @@ http.createServer(function (req, res)
                 + currentdate.getHours() + "-" + currentdate.getMinutes() + "-"  + currentdate.getSeconds();
 
      res.write('{"Hello","'+datetime+'"}');
-     res.write('{"Host ","'+hostname+'"}');
+     res.write('{"Host ","'+hostname1+'"}');
      res.end('');
      console.log(datetime);
   }
  else
  {
-    response.writeHead(404, 'Resource Not Found', {'Content-Type': 'text/plain'});
-    response.end('{"Status":"not found"}');
+    res.writeHead(404, 'Resource Not Found', {'Content-Type': 'text/plain'});
+    res.end('{"Status":"not found"}');
  }
    
 }
